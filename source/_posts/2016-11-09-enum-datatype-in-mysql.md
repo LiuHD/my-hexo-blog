@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 关于mysql中的enum类型
-tags: mysql, enum
+tags: ["mysql","enum"]
 date: 2016-11-09 18:00:31
 ---
 > 最近对mysql的enum数据类型很感兴趣，但是也发现一些问题，就是自己设置enum的可选值中有中文时，会出现乱码，甚至在phpmyadmin中设置完enum字段后表结构的页面就打不开了，后来发现其实是字符集的问题，记得一定要设置为utf8_general_ci ，因为归根到底，enum属于字符串类型的数据，需要设置编码的，其他的enum的一些问题在下面这篇文章里有详细介绍。

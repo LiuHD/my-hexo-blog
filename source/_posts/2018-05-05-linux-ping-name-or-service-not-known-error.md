@@ -1,7 +1,7 @@
 ---
 title: linux ping报错Name or service not known
 date: 2018-05-05
-tags: linux,ping
+tags: [linux,ping]
 ---
 
 vagrant linux 虚拟机设置静态ip以后忘记设置dns，ping的时候会报错：`Name or service not known`

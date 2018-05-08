@@ -2,7 +2,7 @@
 layout: post
 title: 网页邮件编写注意事项
 date: 2017-12-14 18:00:31
-tags: email, html
+tags: ["email", "html"]
 ---
 
 1、不能使用任何形式的背景图片；

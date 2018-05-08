@@ -1,7 +1,8 @@
 ---
 title: 一个vagrant配置文件的例子
 layout: post
-tags: vagrant
+tags: 
+    - vagrant
 date: 2016-09-04
 ---
 

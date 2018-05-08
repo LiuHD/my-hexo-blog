@@ -1,7 +1,10 @@
 ---
 layout: post
 title: jquery中使用delegate绑定scroll事件却捕捉不到的问题
-tags: jquery,delegate,事件
+tags: 
+    - jquery
+    - delegate
+    - 事件
 date: 2016-10-12
 ---
 

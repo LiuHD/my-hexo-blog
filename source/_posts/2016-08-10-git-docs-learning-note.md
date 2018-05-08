@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Git官方文档阅读笔记
-tags: git,笔记
+tags: ["git","笔记"]
 date: 2016-08-10
 ---
 

@@ -1,13 +1,13 @@
 ---
 title: 详解Mysql Explain 功能中的type字段含义
 date: 2018-04-19 13:37:12
-tags: mysql,explain,sql调优
+tags: ["mysql","explain","sql调优"]
 ---
-<!-- more -->
+
 ## 准备工作
 
 为了接下来方便演示 EXPLAIN 的使用, 首先我们需要建立两个测试用的表, 并添加相应的数据:
-
+<!-- more -->
 ```sql
 CREATE TABLE `user_info` (
   `id`   BIGINT(20)  NOT NULL AUTO_INCREMENT,

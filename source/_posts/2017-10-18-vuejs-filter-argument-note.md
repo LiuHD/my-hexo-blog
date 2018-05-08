@@ -1,7 +1,7 @@
 ---
 layout: post
 title: vue.js 中过滤器传参的注意事项
-tags: vue, vue.js, filter
+tags: ["vue", "vue.js", "filter"]
 ---
 
 vue.js的过滤器可以传入多个参数,每个参数也可以用函数计算，这个时候要注意，用函数计算的参数在书写时，其函数被传入的参数如果有多个，则中间不能有空格

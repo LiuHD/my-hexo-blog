@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 在linux上安装psysh
-tags: pysh
+tags: 
+    - pysh
 date: 2016-08-24
 ---
 

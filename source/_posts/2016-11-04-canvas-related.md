@@ -1,7 +1,9 @@
 ---
 layout: post
 title: HTML5 Canvas的一些坑
-tags: canvas, javascript
+tags: 
+    - canvas 
+    - javascript
 date: 2016-11-04
 ---
 当使用canvas渲染多张图片时，很多同学喜欢使用image对象的onload事件来确保图片的渲染，但是由于图片大小，格式等原因可能造成图片加载完成的先后并不是代码里写的次序，所以会产生本来要在上层的图片渲染在下层，甚至可能被遮挡，完全看不见。代码如改动前。
