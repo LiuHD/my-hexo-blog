@@ -14,6 +14,7 @@ clientWidth Width with padding
 scrollWidth entire width of an element with padding
 scrollHeight entire height of an element with padding
 
+![](http://ww1.sinaimg.cn/large/82cec9c6ly1frpsq8mcgmj213n0lr7uh.jpg)
 ### window
 
 innerWidth width NOT including toolbars/scrollbars
@@ -23,5 +24,7 @@ outerWidth width including toolbars/scrollbars
 outerHeight height including toolbars/scrollbars
 
 ### screen
-width
-height
+width Width of whole screen including taskbar
+height Height of whole screen including taskbar
+availWidth available Width of whole screen
+availHeight available Height of whole screen 
