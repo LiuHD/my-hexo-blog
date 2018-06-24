@@ -13,7 +13,7 @@ clientWidth Width with padding
 
 scrollWidth entire width of an element with padding
 scrollHeight entire height of an element with padding
-
+<!-- more -->
 ![](http://ww1.sinaimg.cn/large/82cec9c6ly1frpsq8mcgmj213n0lr7uh.jpg)
 ### window
 
