@@ -2,6 +2,7 @@
 title: query
 date: 2017-10-18 18:14:20
 format: false
+permalink: /zixishi
 ---
 <!DOCTYPE html>
 <html>
@@ -10,7 +11,7 @@ format: false
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <title>查询自习室|河师大掌中校园</title>
-    <link href="http://cdn.bootcss.com/weui/0.4.2/style/weui.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/weui/0.4.2/style/weui.css" rel="stylesheet">
     <!--<link rel="stylesheet" href="../css/weui.css">-->
 </head>
 <style type="text/css">
