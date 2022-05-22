@@ -7,12 +7,11 @@ lang: en
 ---
 {% raw %}
 <meta charset="utf-8">
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjs@10.5.3/lib/browser/math.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/vue/2.6.11/vue.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.staticfile.org/mathjs/10.5.3/math.min.js"></script>
 <div id="app">
     <button type="button" class="btn btn-default" style="z-index: 10000;position: fixed;left: 0;top: 0;" v-on:click="moreDetail = !moreDetail">
         {{ moreDetail ? 'less' : 'more' }}</button>
@@ -22,7 +21,7 @@ lang: en
                 <h2 class="text-center text-primary" style="margin: 3rem auto 2rem auto;">贷款压力计算器</h2>
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="total">房屋总价</label>
+                        <label class="col-sm-4 control-label" for="total">房屋总价/万元</label>
                         <div class="col-sm-8">
                             <input id="total" v-model="total" class="form-control" type="text"/>
                         </div>
@@ -34,7 +33,7 @@ lang: en
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="year1">商贷贷款额</label>
+                        <label class="col-sm-4 control-label" for="year1">商贷贷款额/万元</label>
                         <div class="col-sm-8">
                             <input id="sd_total" v-model="sd_total" class=" form-control" type="text"/>
                         </div>
@@ -59,25 +58,25 @@ lang: en
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="sf-total">首付总额</label>
+                        <label class="col-sm-4 control-label" for="sf-total">首付总额/万元</label>
                         <div class="col-sm-8">
                             <input id="sf-total" v-model="sf_total" class="form-control" type="text"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="cash">自有现金</label>
+                        <label class="col-sm-4 control-label" for="cash">自有现金/万元</label>
                         <div class="col-sm-8">
                             <input id="cash" v-model="cash" class="form-control" type="text"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="sf-cash">首付自有支出</label>
+                        <label class="col-sm-4 control-label" for="sf-cash">首付自有支出/万元</label>
                         <div class="col-sm-8">
                             <input id="sf-cash" v-model="sf_cash" class="form-control" type="text"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="sfd-total">首付贷总额</label>
+                        <label class="col-sm-4 control-label" for="sfd-total">首付贷总额/万元</label>
                         <div class="col-sm-8">
                             <input id="sfd-total" v-model="sfd_total" class="form-control" type="text"/>
                         </div>
@@ -102,7 +101,7 @@ lang: en
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="gjj-total">公积金贷款总额</label>
+                        <label class="col-sm-4 control-label" for="gjj-total">公积金贷款总额/万元</label>
                         <div class="col-sm-8">
                             <input id="gjj-total" v-model="gjj_total" class="form-control" type="text"/>
                         </div>
@@ -114,13 +113,19 @@ lang: en
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="rent">房租</label>
+                        <label class="col-sm-4 control-label" for="month_in">月收入/元</label>
+                        <div class="col-sm-8">
+                            <input id="month_in" v-model="month_in" class="form-control" type="text"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="rent">房租/元</label>
                         <div class="col-sm-8">
                             <input id="rent" v-model="rent" class="form-control" type="text"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="other_pay">其他支出</label>
+                        <label class="col-sm-4 control-label" for="other_pay">其他支出/元</label>
                         <div class="col-sm-8">
                             <input id="other_pay" v-model="other_pay" class="form-control" type="text"/>
                         </div>
@@ -185,8 +190,8 @@ lang: en
         data: {
             // 汇总
             month: [],
-            month_in: 24500,
-            gjj_in: 7100,
+            month_in: 0,
+            gjj_in: 0,
             // 商贷
             sdMonth: [],
             sd_pay_method: 1,
@@ -196,19 +201,19 @@ lang: en
             sfd_rate: 4.8,
             sfd_pay_method: 1,
             // 房屋总价
-            total: 300,
+            total: 100,
             year1: 30,
             year2: 5,
-            first_pay_percent: 70,
-            cash: 130,
-            sf_cash: 120,
+            first_pay_percent: 30,
+            cash: 0,
+            sf_cash: 0,
             // 公积金
-            gjj_total: 60,
+            gjj_total: 0,
             gjj_rate: 3.9,
             // 房租
-            rent: 2450,
+            rent: 0,
             // 其他支出
-            other_pay: 2000,
+            other_pay: 0,
             moreDetail: false,
         },
         computed: {
