@@ -34,6 +34,9 @@ keywords: "Hexo, NexT"
 # Set rss to specific value if you have burned your feed already.
 rss:
 
+header:
+  hide: false
+
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
